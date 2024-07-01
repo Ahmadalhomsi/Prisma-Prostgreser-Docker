@@ -675,6 +675,7 @@ ALTER TABLE "gts$dev".tracker_parameters OWNER TO postgres;
 -- TOC entry 234 (class 1259 OID 16859)
 -- Name: tracker_positions; Type: TABLE; Schema: gts$dev; Owner: postgres
 --
+-- ########################################################################
 
 CREATE TABLE "gts$dev".tracker_positions (
     id integer NOT NULL,
