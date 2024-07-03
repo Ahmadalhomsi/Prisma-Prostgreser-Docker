@@ -2,22 +2,21 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pass123
-      POSTGRES_DB: pass123
+    image: postgres
     ports:
       - "5432:5432"
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-
+    environment:
+      POSTGRES_DB: DB1
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass123
   app:
     build: .
     environment:
-      DATABASE_URL: "postgresql://postgres:yourpassword@postgres:5432/yourdatabase"
+      DATABASE_URL: "postgresql://postgres:pass123@postgres:5432/DB1"
     ports:
       - "3000:3000"
+      - "5555:5555"
+      
     depends_on:
       - postgres
     command: [ "sh", "-c", "npx prisma migrate deploy && npm start" ]

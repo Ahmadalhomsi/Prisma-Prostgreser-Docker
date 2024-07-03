@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npx prisma migrate deploy && node index.js"
+    "start": "npx prisma migrate deploy && npx prisma studio && node index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "prisma": "^5.16.1"
   },
   "dependencies": {
-    "@prisma/client": "^5.16.1"
+    "@prisma/client": "^5.16.1",
+    "pg": "^8.12.0"
   }
 }
